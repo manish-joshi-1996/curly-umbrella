@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container-fluid">
     <a (click)="logout()" class="btn btn-danger mt-2" style="color: #fff; float: right;">Logout</a>
-  <h1 class="col-6">Codebuilder Assignment - Angular</h1>
+  <h3 class="col-6">Kodebuilder Assignment - Angular</h3>
     <a href="#" routerLink="/post/create/" class="btn btn-success">Create New Post</a>
-    
+    <div class="table-responsive">
     <table class="table table-bordered mt-2">
       <tr>
         <th>ID</th>
@@ -10,7 +10,7 @@
         <th>Body</th>
         <th width="220px">Action</th>
       </tr>
-      <tr *ngFor="let post of posts">
+      <tr *ngFor="let post of posts | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize; let i = index;">
         <td>{{ post.id }}</td>
         <td>{{ post.title }}</td>
         <td>{{ post.body }}</td>
@@ -21,4 +21,8 @@
         </td>
       </tr>
     </table>
+    <div class="d-flex justify-content-center">
+    <ngb-pagination [collectionSize]="posts.length" [pageSize]="pageSize" [(page)]="page" ></ngb-pagination>
+    </div>
+    </div>
  </div>

@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { PostModule } from './post/post.module';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent],
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     PostModule,
+    NgbModule,
     FormsModule,
     HttpClientModule,
     NotifierModule.withConfig({
@@ -57,6 +59,7 @@ import { FormsModule } from '@angular/forms';
         overlap: 150,
       },
     }),
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

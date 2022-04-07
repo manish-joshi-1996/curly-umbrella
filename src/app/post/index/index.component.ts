@@ -11,6 +11,8 @@ import { PostService } from '../post.service';
 })
 export class IndexComponent implements OnInit {
   posts: Post[] = [];
+  page = 1;
+  pageSize = 10;
 
   constructor(
     public postService: PostService,
@@ -33,7 +35,7 @@ export class IndexComponent implements OnInit {
     });
   }
 
-  logout(){
+  logout() {
     this.notifier.notify('success', 'Logout Successfully!!');
     this.route.navigateByUrl('/login');
   }
