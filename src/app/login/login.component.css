@@ -1,0 +1,18 @@
+.authentication-main .auth-innerright {
+  background: #fafafa;
+  justify-content: left;
+  padding: 20px 50px;
+}
+
+.authentication-box {
+  width: 85%;
+  z-index: 2;
+}
+
+.authentication-main .auth-innerleft, .authentication-main .auth-innerright{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
